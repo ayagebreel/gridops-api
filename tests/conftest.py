@@ -1,5 +1,4 @@
 import pytest
-
 from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -7,7 +6,6 @@ from sqlalchemy.pool import StaticPool
 
 from app.database import Base, get_db
 from app.main import app
-
 
 TEST_DATABASE_URL = "sqlite://"
 
@@ -50,23 +48,7 @@ def client(db):
 
     app.dependency_overrides.clear()
 
-def create_fault(client):
 
-    response = client.post(
-        "/faults/",
-        json={
-            "description": "Cable failure",
-            "location": "Giza",
-            "severity": "medium",
-            "reported_by": "Technician 10"
-        }
-    )
-
-    return response.json()["id"]
-
-import pytest
-
-#this line to solve error of testing
 @pytest.fixture
 def create_fault():
 

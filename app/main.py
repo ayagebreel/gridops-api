@@ -1,12 +1,8 @@
 from fastapi import FastAPI
 
+from app import models  # noqa: F401
+from app.api import components, faults, work_orders
 from app.database import Base, engine
-from app import models
-
-from app.api import faults, work_orders
-from app.api import components
-
-
 
 Base.metadata.create_all(bind=engine)
 

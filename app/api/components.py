@@ -3,11 +3,7 @@ from sqlalchemy.orm import Session
 
 from app.database import get_db
 from app.models.component import Component
-from app.schemas.component import (
-    ComponentCreate,
-    ComponentResponse
-)
-
+from app.schemas.component import ComponentCreate, ComponentResponse
 
 router = APIRouter(
     prefix="/components",

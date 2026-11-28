@@ -1,6 +1,5 @@
 from fastapi import HTTPException, status
 
-
 ALLOWED = {
     "open": {"assigned", "cancelled"},
     "assigned": {"in_progress", "cancelled"},

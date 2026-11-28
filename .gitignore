@@ -218,3 +218,20 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# GridOps local files
+*.db
+*.sqlite
+*.sqlite3
+
+# Environment variables
+.env.*
+!.env.example
+
+# IDE
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db

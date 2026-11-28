@@ -1,24 +1,17 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
-from app.models.component import Component, WorkOrderPart
-from app.schemas.work_order import PartCreate
 
 from app.database import get_db
+from app.models.component import Component, WorkOrderPart
 from app.models.fault import Fault
 from app.models.work_order import WorkOrder
 from app.schemas.work_order import (
+    PartCreate,
+    StatusUpdate,
     WorkOrderCreate,
     WorkOrderResponse,
-    StatusUpdate
 )
-
-from app.models.component import Component, WorkOrderPart
-from app.schemas.work_order import PartCreate
-
-from app.services.work_order_service import (
-    validate_status_transition
-)
-
+from app.services.work_order_service import validate_status_transition
 
 router = APIRouter(
     prefix="/work-orders",

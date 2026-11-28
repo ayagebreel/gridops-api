@@ -5,7 +5,6 @@ from app.database import get_db
 from app.models.fault import Fault
 from app.schemas.fault import FaultCreate, FaultResponse
 
-
 router = APIRouter(
     prefix="/faults",
     tags=["Faults"]
